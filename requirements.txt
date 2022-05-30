@@ -14,7 +14,7 @@ Cython==0.29.29
 dataclasses==0.6
 hydra-core==1.1.2
 importlib-resources==5.2.3
-numpy==1.21.6
+numpy
 omegaconf==2.1.2
 portalocker==2.4.0
 pycparser==2.21
