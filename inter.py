@@ -241,6 +241,8 @@ def s2t():
     print("Total time: {:.3f} seconds; translation time: {:.3f}".format(
            time.time() - start_time, total_translate_time
         ))
+    
+    return detok_hypo_str
 
 
 

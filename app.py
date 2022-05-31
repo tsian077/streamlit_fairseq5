@@ -115,7 +115,9 @@ def app():
         st.audio('input.wav', format="audio/wav")
     except:
         st.write("No record media.")
-    s2t()
+    output = s2t()
+    st.write(output)
+
 
     
 
