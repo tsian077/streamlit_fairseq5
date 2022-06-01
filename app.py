@@ -13,18 +13,20 @@ HERE = Path(__file__).parent
 
 # subprocess.run(['python', 'setup.py', 'build_ext' ,'--inplace'])
 # # This code is based on https://github.com/streamlit/demo-self-driving/blob/230245391f2dda0cb464008195a470751c01770b/streamlit_app.py#L48  # noqa: E501
+@st.cache(allow_output_mutation=True)
 def download_file(url, download_to: Path, expected_size=None):
+    subprocess.run(['pip3', 'install', '--editable', './'])
     # Don't download the file twice.
     # (If possible, verify the download using the file length.)
-    if download_to.exists():
-        if expected_size:
-            subprocess.run(['pip3', 'install', '--editable', './'])
-            if download_to.stat().st_size == expected_size:
-                return
-        else:
-            st.info(f"{url} is already downloaded.")
-            if not st.button("Download again?"):
-                return
+    # if download_to.exists():
+    #     if expected_size:
+            
+    #         if download_to.stat().st_size == expected_size:
+    #             return
+    #     else:
+    #         st.info(f"{url} is already downloaded.")
+    #         if not st.button("Download again?"):
+    #             return
 
     download_to.parent.mkdir(parents=True, exist_ok=True)
 
