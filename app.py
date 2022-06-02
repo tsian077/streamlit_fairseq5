@@ -104,7 +104,7 @@ def app():
     )
     try:
         st.audio('input.wav', format="audio/wav")
-         if st.button('Compute'):
+        if st.button('Compute'):
             output = s2t()
             st.write(output)
         
