@@ -10,6 +10,11 @@ import urllib.request
 
 HERE = Path(__file__).parent
 
+# Remove audio file
+def clear():
+    # If file exists, delete it
+    if os.path.isfile("input.wav"):
+        os.remove("input.wav")
 
 # subprocess.run(['python', 'setup.py', 'build_ext' ,'--inplace'])
 # # This code is based on https://github.com/streamlit/demo-self-driving/blob/230245391f2dda0cb464008195a470751c01770b/streamlit_app.py#L48  # noqa: E501
@@ -107,6 +112,7 @@ def app():
         if st.button('Compute'):
             output = s2t()
             st.write(output)
+            clear()
         
         
     except:
