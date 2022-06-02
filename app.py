@@ -104,8 +104,10 @@ def app():
     )
     try:
         st.audio('input.wav', format="audio/wav")
-        output = s2t()
-        st.write(output)
+         if st.button('Compute'):
+            output = s2t()
+            st.write(output)
+        
         
     except:
         st.write("No record media.")
