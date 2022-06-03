@@ -116,7 +116,7 @@ def app():
         
         
     except:
-        st.write("No record media.")
+        st.write(" ")
     
    
 
